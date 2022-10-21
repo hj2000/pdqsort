@@ -1,4 +1,4 @@
-import java.util.*;
+package SORT;
 public class Pdqsort<T extends Comparable<T>> {
     static private final int ins_size = 24;
     static private final int nine_mid_size = 128;
@@ -137,8 +137,8 @@ public class Pdqsort<T extends Comparable<T>> {
         sort2(data, l, r);
     }
 
-    public void pdqsort(T[] Array) {
-        pdqsort_loop(Array, 0, Array.length, (int)(Math.log(Array.length)/Math.log(2)), false);
+    public void pdqsort(T[] Array,int begin,int end) {
+        pdqsort_loop(Array, begin, end, (int)(Math.log(end-begin)/Math.log(2)), false);
     }
     /*part the Array using the first element */
     public int partition_left(T[] Array, int begin, int end) {
@@ -217,7 +217,7 @@ public class Pdqsort<T extends Comparable<T>> {
         return result;
     }
 /*pdq sort */
-void pdqsort_loop(T[] Array,int begin,int end,int bad_allow,boolean has_left){
+public void pdqsort_loop(T[] Array,int begin,int end,int bad_allow,boolean has_left){
     final int size=end-begin;
     if(size<=1)
     return;
