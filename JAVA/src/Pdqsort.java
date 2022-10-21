@@ -1,32 +1,12 @@
 import java.util.*;
-
-public class App {
-    public static void main(String[] args) throws Exception {
-        Integer[] A = new Integer[2000];
-        Random f=new Random();
-        var t=new Date();
-        f.setSeed(t.getTime());
-        for(int i=0;i<A.length;i++){
-            A[i]=Integer.valueOf(f.nextInt(2022));
-            //System.out.println(i);
-        }
-        var p = new PDQsort();
-        //p.pdqsort_loop(A, 0, A.length/2, 5, false);
-        p.pdqsort_loop(A,A.length/2+1,A.length,5,false);
-        for (var a : A) {
-            System.out.println(a);
-        }
-    }
-
-}
-
-
-class PDQsort<T extends Comparable<T>> {
+public class Pdqsort<T extends Comparable<T>> {
     static private final int ins_size = 24;
     static private final int nine_mid_size = 128;
     static private final int partial_limit=8;
-    
-    public PDQsort() {
+    public static void main(String[] args) throws Exception {
+        
+    }
+    public Pdqsort() {
 
     }
 
@@ -215,6 +195,7 @@ class PDQsort<T extends Comparable<T>> {
         result[1] = alread_part;
         return result;
     }
+    /*blcok_quick_sort */
     public int[] partition_right_branchless(T[] Array,int begin,int end){
         int[] result=new int[2]; 
         T pivot=Array[begin];
@@ -230,6 +211,7 @@ class PDQsort<T extends Comparable<T>> {
             while(l<r){
                 int num_u=r-l;
                 //int left_s=
+                //todo
             }
         }
         return result;
